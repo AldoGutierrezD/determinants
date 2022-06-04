@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Système de 2 équations</title>
+</head>
+<body>
+    <div class="container">
+        <form action="">
+            <div class="content">
+                <input type="number" id="a" placeholder="Saisissez le numéro (a)">
+                <input type="number" id="b" placeholder="Saisissez le numéro (b)">
+                <input type="number" id="c" placeholder="Saisissez le numéro (c)">
+                <input type="number" id="d" placeholder="Saisissez le numéro (d)">
+                <input type="number" id="e" placeholder="Saisissez le numéro (e)">
+                <input type="number" id="f" placeholder="Saisissez le numéro (f)">
+            </div>
+            <div class="content">
+                <button type="button" id="resoudre" onclick="res()">Résoudre</button>
+            </div>
+            <div class="content">
+                <p id="resultat">Resultat</p>
+            </div>
+        </form>
+    </div>
+    
+    <div class="container">
+        <h1>Problème</h1>
+        <h4>Instructions</h2>
+        <ul>
+            <li>Demande à l'utilisateur de saisir les nombres a, b, c, d, e et f
+            </li>
+            <li>Affiche le système d'équations ax+by=c et dx+ey=f dont l'utilisateur a saisi les coefficients.
+            </li>
+            <li>Calcule puis affiche les solutions x et y de l'équation.
+            </li>
+        </ul>
+        <h4>Rappel mathématique</h4>
+        <div class="content-formule">
+            <p class="formule">ax+by=c   ⟹  dx+ey=f</p>
+        </div>
+        <h4>Informations mathématiques</h2>
+            <ul>
+                <li>Si le déterminant Δ=ae-bd≠0, l'unique solution du système est : Δx=ce-bd | Δy=af-cd
+                </li>
+                <li>Sinon, le système n'a aucune ou a une infinité de solutions
+                </li>
+            </ul>
+        <h4>Exemple</h4>
+        <div class="content-exemple">
+            <div class="exemple">
+                <h5>Données</h5>
+                <ul>
+                    <li>a = 7</li>
+                    <li>b = 4</li>
+                    <li>c = 13</li>
+                    <li>d = 5</li>
+                    <li>e = -2</li>
+                    <li>f = 19</li>
+                </ul>
+            </div>
+            <div class="exemple">
+                <h5>Remplacement</h5>
+                <p>7x + 4y = 13</p>
+                <p>5x - 2y = 19</p>
+            </div>
+            <div class="exemple">
+                <h5>Déterminant Δ</h5>
+                <pre>  x   y </pre>
+                <pre>| 7   4 |</pre>
+                <pre>| 5  -2 |</pre>
+                <hr>
+                <pre>(7*-2) - (4*5)</pre>
+                <pre> -14 - 20 = -34</pre>
+            </div>
+            <div class="exemple">
+                <h5>Déterminant Δx</h5>
+                <pre>  i    y </pre>
+                <pre>| 13   4 |</pre>
+                <pre>| 19  -2 |</pre>
+                <hr>
+                <pre>(13*-2) - (4*19)</pre>
+                <pre> -26 - 76 = -102</pre>
+            </div>
+            <div class="exemple">
+                <h5>Déterminant Δy</h5>
+                <pre>  x    i </pre>
+                <pre>| 7   13 |</pre>
+                <pre>| 5   19 |</pre>
+                <hr>
+                <pre>(7*19) - (13*5)</pre>
+                <pre> 133 - 65 = 68</pre>
+            </div>
+            <div class="exemple">
+                <h5>Remplacement</h5>
+                <pre>x = Δx/Δ</pre>
+                <pre>  = -102/-34 = 3</pre>
+                <hr>
+                <pre>x = Δy/Δ</pre>
+                <pre>  = 68/-34 = -2</pre>
+                <hr>
+                <pre>7(3)+4(-2) = 13</pre>
+                <pre>5(3)-2(-2) = 19</pre>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
